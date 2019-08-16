@@ -45,7 +45,7 @@ func (this *IniParser) GetInt(section string, key string) int {
 		return 0
 	}
 
-	value_int, _ := s.Key(key).MustInt()
+	value_int := s.Key(key).MustInt()
 
 	return value_int
 }
