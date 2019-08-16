@@ -47,7 +47,7 @@ func (this *IniParser) GetInt(section string, key string) int {
 
 	value_int, _ := s.Key(key).MustInt()
 
-	return int32(value_int)
+	return value_int
 }
 
 func (this *IniParser) GetInt32(section string, key string) int32 {
