@@ -35,6 +35,21 @@ func (this *IniParser) GetString(section string, key string) string {
 	return s.Key(key).String()
 }
 
+func (this *IniParser) GetInt(section string, key string) int {
+	if this.conf_reader == nil {
+		return 0
+	}
+
+	s := this.conf_reader.Section(section)
+	if s == nil {
+		return 0
+	}
+
+	value_int, _ := s.Key(key).MustInt()
+
+	return int32(value_int)
+}
+
 func (this *IniParser) GetInt32(section string, key string) int32 {
 	if this.conf_reader == nil {
 		return 0
