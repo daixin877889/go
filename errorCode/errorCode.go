@@ -11,5 +11,6 @@ var (
 	ErrorParameterError = ErrData{Code: 40002, Msg: "参数错误"}
 	ErrorNotAuthUser = ErrData{Code: 40001, Msg: "鉴权失败"}
 	ErrorNoPermission = ErrData{Code: 40003, Msg: "无权限"}
-	ErrorNotfindrror = ErrData{Code: 40004, Msg: "资源不存在"}
+	ErrorNotfind = ErrData{Code: 40004, Msg: "资源不存在"}
+	ErrorNotfindWechatConfig = ErrData{Code: 40014, Msg: "微信配置不存在"}
 )
