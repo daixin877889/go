@@ -13,4 +13,5 @@ var (
 	ErrorNoPermission = ErrData{Code: 40003, Msg: "无权限"}
 	ErrorNotfind = ErrData{Code: 40004, Msg: "资源不存在"}
 	ErrorNotfindWechatConfig = ErrData{Code: 40014, Msg: "微信配置不存在"}
+	ErrorVerifytCodeError = ErrData{Code: 40014, Msg: "验证码错误"}
 )
