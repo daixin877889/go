@@ -3,6 +3,7 @@ package errorCode
 type ErrData struct {
 	Code int    `json:"code"`
 	Msg  string `json:"msg"`
+	Err  error  `josn:"err"`
 }
 
 var (
@@ -18,3 +19,13 @@ var (
 	ErrorWechatAsToken       = ErrData{Code: 40015, Msg: "微信access_token获取错误"}
 	ErrorVerifytCodeError    = ErrData{Code: 40024, Msg: "验证码错误"}
 )
+
+// 自定义错误
+func CustomError(code int, msg string, err error) ErrData {
+	var errMsg = ErrData{
+		Code: code,
+		Msg:  msg,
+		Err:  err,
+	}
+	return errMsg
+}
