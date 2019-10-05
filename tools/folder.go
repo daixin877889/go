@@ -30,7 +30,7 @@ func CreateFolder(path string) bool {
 	} else {
 		fmt.Printf("no dir![%v]\n", _dir)
 		// 创建文件夹
-		err := os.Mkdir(_dir, os.ModePerm)
+		err := os.MkdirAll(_dir, os.ModePerm)
 		if err != nil {
 			fmt.Printf("mkdir failed![%v]\n", err)
 			return false
