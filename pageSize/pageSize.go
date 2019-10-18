@@ -1,11 +1,21 @@
 package pageSize
 
 import (
-	"github.com/gin-gonic/gin"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
 )
 
 func GetPageSize(page, size int) (int, int) {
+	if page == 0 {
+		page = 1
+	}
+	if size == 0 {
+		size = 10
+	}
+	if size > 500 {
+		size = 500
+	}
 	offset := (page - 1) * size
 	return offset, size
 }
