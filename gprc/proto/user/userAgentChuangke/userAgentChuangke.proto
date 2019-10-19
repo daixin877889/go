@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package userAgentChuangke;
+
+// 创建或更新创客代理商
+service CreateChuangkeAgent {
+  rpc CreateChuangkeAgent(ChuangkeAgentRequest) returns (ChuangkeAgentReply) {}
+}
+
+// 获取创客代理商列表
+service GetChuangkeAgent {
+  rpc GetChuangkeAgent(ChuangkeAgentRequest) returns (ChuangkeAgentListReply) {}
+}
+
+// 根据userId获取创客代理商
+service GetChuangkeAgentByUserId {
+  rpc GetChuangkeAgentByUserId(ChuangkeAgentRequest)
+      returns (ChuangkeAgentReply) {}
+}
+
+// 创客代理商请求数据
+message ChuangkeAgentRequest {
+  int32 id = 1;
+  string uid = 2;
+  int32 userId = 3;
+  string nickname = 4;
+  string realName = 5;
+  string mobile = 6;
+  int32 vipType = 7;
+  string reNickname = 8;
+  int32 pVipType = 9;
+  int32 puserId = 10;
+  int32 applyStatus = 11;
+  string showUserId = 12;
+  string showpUserId = 13;
+  int32 page = 14;
+  int32 size = 15;
+}
+
+// 创客代理商返回数据
+message ChuangkeAgentReply {
+  int32 id = 1;
+  string uid = 2;
+  int32 userId = 3;
+  string nickname = 4;
+  string mobile = 5;
+  int32 vipType = 6;
+  int32 vipGivenQuota = 7;
+  int32 vipRemainingQuota = 8;
+  int32 svipGivenQuota = 9;
+  int32 svipRemainingQuota = 10;
+  string headimgurl = 11;
+  string reNickname = 12;
+  int32 pVipType = 13;
+  int32 puserId = 14;
+  int32 aaId = 15;
+  string realName = 16;
+  int32 applyStatus = 17;
+  string auditAt = 18;
+  string province = 19;
+  string city = 20;
+  string area = 21;
+  int32 agentGivenQuota = 22;
+  int32 agentRemainingQuota = 23;
+  int32 partnerGivenQuota = 24;
+  int32 partnerRemainingQuota = 25;
+  int32 branchGivenQuota = 26;
+  int32 branchRemainingQuota = 27;
+  string showUserId = 28;
+  string showpUserId = 29;
+  string createdAt = 30;
+  string updatedAt = 31;
+  string deletedAt = 32;
+}
+
+// 创客代理商返回列表返回数据
+message ChuangkeAgentListReply { repeated ChuangkeAgentReply agentList = 1; }
