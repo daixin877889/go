@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package user;
+
+// 创建或新建用户
+service CreateOrUpdateUser {
+  rpc CreateOrUpdateUser(UserRequest) returns (UserDataReply) {}
+}
+
+// 用户列表
+service GetUserList {
+  rpc GetUserList(UserRequest) returns (userListReply) {}
+}
+
+// 根据ID获取用户
+service GetUserById {
+  rpc GetUserById(UserRequest) returns (UserDataReply) {}
+}
+
+// 用户列表请求数据
+message UserRequest {
+  int32 id = 1;
+  int32 page = 2;
+  int32 size = 3;
+  string uuid = 4;
+  string userName = 5;
+  string nickName = 6;
+  string realName = 7;
+  string phone = 8;
+  int32 status = 9;
+}
+
+// 用户信息返回数据
+message UserDataReply {
+  int32 code = 1;
+  string msg = 2;
+  int32 id = 3;
+  string createdAt = 4;
+  string updatedAt = 5;
+  string deletedAt = 6;
+  string uuid = 7;
+  string userName = 8;
+  string Phone = 9;
+  string nickName = 10;
+  string realName = 11;
+  int32 status = 12;
+}
+
+// 用户列表返回数据
+message userListReply { repeated UserDataReply userList = 1; }
